@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Entity</name>
+    </assembly>
+    <members>
+        <member name="T:Entity.AccountValidation">
+            <summary>
+            账户校验类
+            </summary>
+        </member>
+        <member name="M:Entity.AccountValidation.#ctor">
+            <summary>
+            构造
+            </summary>
+        </member>
+        <member name="T:Entity.Database.Account">
+            <summary>
+            账户类
+            </summary>
+        </member>
+        <member name="P:Entity.Database.Account.ID">
+            <summary>
+            标识
+            </summary>
+        </member>
+        <member name="P:Entity.Database.Account.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:Entity.Database.Account.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:Entity.Database.Account.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Entity.Database.Account.UpdateTime">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="M:Entity.Database.Account.#ctor">
+            <summary>
+            构造
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Core</name>
+    </assembly>
+    <members>
+        <member name="T:Core.CDObject">
+            <summary>
+            核心类
+            </summary>
+        </member>
+        <member name="M:Core.IEnumerableExtension.TryToList``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            ToList 的安全版本，如果发生异常并不会导致程序崩溃，而是返回null。
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Core.NotifyCDObject">
+            <summary>
+            INotifyPropertyChanged实现类
+            </summary>
+        </member>
+        <member name="E:Core.NotifyCDObject.PropertyChanged">
+            <summary>
+            属性变化事件
+            </summary>
+        </member>
+        <member name="M:Core.NotifyCDObject.#ctor">
+            <summary>
+            构造
+            </summary>
+        </member>
+        <member name="F:Core.NotifyInfoCDObject._DataErrors">
+            <summary>
+            验证错误集合
+            </summary>
+        </member>
+        <member name="M:Core.NotifyInfoCDObject.RemoveDic(System.Collections.Generic.Dictionary{System.String,System.String},System.String)">
+            <summary>
+            移除字典
+            </summary>
+            <param name="dics"></param>
+            <param name="dicKey"></param>
+        </member>
+        <member name="M:Core.NotifyInfoCDObject.AddDic(System.Collections.Generic.Dictionary{System.String,System.String},System.String)">
+            <summary>
+            添加字典
+            </summary>
+            <param name="dics"></param>
+            <param name="dicKey"></param>
+        </member>
+    </members>
+</doc>
