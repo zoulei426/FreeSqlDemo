@@ -4,13 +4,18 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:prism="http://prismlibrary.com/"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:local="clr-namespace:FreeSqlDemo"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
         prism:ViewModelLocator.AutoWireViewModel="True">
-    <StackPanel Width="100" HorizontalAlignment="Center">
-        <TextBox Text="{Binding Account.UserName, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
-                 Margin="10" />
-        <Button Content="Click" Command="{Binding ConfirmCommand}" />
+    <StackPanel HorizontalAlignment="Center">
+        <xctk:PropertyGrid x:Name="_propertyGrid" Width="450" Margin="10" SelectedObject="{Binding Account}"
+                           ShowSummary="False" ShowAdvancedOptions="False" ShowTitle="False" ShowSearchBox="False" ShowSortOptions="False" ShowDescriptionByTooltip="True"
+                           
+                                     AutoGenerateProperties="True">
+            <!-- Only the following properties will be displayed in the PropertyGrid -->
+
+        </xctk:PropertyGrid>
     </StackPanel>
 </Window>

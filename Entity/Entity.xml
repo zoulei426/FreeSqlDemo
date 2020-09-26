@@ -4,16 +4,6 @@
         <name>Entity</name>
     </assembly>
     <members>
-        <member name="T:Entity.AccountValidation">
-            <summary>
-            账户校验类
-            </summary>
-        </member>
-        <member name="M:Entity.AccountValidation.#ctor">
-            <summary>
-            构造
-            </summary>
-        </member>
         <member name="T:Entity.Database.Account">
             <summary>
             账户类
@@ -45,6 +35,21 @@
             </summary>
         </member>
         <member name="M:Entity.Database.Account.#ctor">
+            <summary>
+            构造
+            </summary>
+        </member>
+        <member name="T:Entity.Models.Account">
+            <summary>
+            账户类
+            </summary>
+        </member>
+        <member name="T:Entity.AccountValidator">
+            <summary>
+            账户验证器
+            </summary>
+        </member>
+        <member name="M:Entity.AccountValidator.#ctor">
             <summary>
             构造
             </summary>

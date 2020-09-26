@@ -1,4 +1,4 @@
-﻿using Entity.Model;
+﻿using Entity.Models;
 using FluentValidation;
 using System;
 using System.Collections.Generic;
@@ -7,14 +7,14 @@ using System.Text;
 namespace Entity
 {
     /// <summary>
-    /// 账户校验类
+    /// 账户验证器
     /// </summary>
-    public class AccountValidation : AbstractValidator<Account>
+    public class AccountValidator : AbstractValidator<Account>
     {
         /// <summary>
         /// 构造
         /// </summary>
-        public AccountValidation()
+        public AccountValidator()
         {
             RuleFor(x => x.UserName).NotEmpty().WithMessage("用户名不能为空")
                 .Length(2, 30).WithMessage("用户名长度在2-30个字符之间");

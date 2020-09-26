@@ -25,19 +25,7 @@ namespace FreeSqlDemo
         public MainWindow()
         {
             InitializeComponent();
-
-            //InitializeData();
         }
 
-        private void InitializeData()
-        {
-            var account = new Account();
-            account.UserName = "Alice";
-            account.Password = "123456";
-
-            var resp = new AccountRepository();
-            resp.AddAccount(account);
-            //var account = resp.Get(new Guid("e3556d05-c1fe-4e7d-a258-651888d3c22d"));
-        }
     }
 }

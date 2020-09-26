@@ -1,4 +1,4 @@
-﻿using Entity.Model;
+﻿using Entity.Models;
 using Prism.Mvvm;
 using Repository;
 using System;
@@ -27,8 +27,16 @@ namespace FreeSqlDemo
 
         public MainWindowViewModel()
         {
+            //var account = new Account();
+            //account.UserName = "Alice";
+            //account.Password = "123456";
+
+            //var resp = new AccountRepository();
+            //resp.AddAccount(account.ConvertTo<Entity.Database.Account>());
+
+
             var resp = new AccountRepository();
-            Account = resp.Get(new Guid("4c4b59b5-086b-4876-a6ce-0a4740cf7708")).ConvertTo<Account>();
+            Account = resp.Get(new Guid("5f6e55b3-eff9-b16c-0097-2644033ba3f5")).ConvertTo<Account>();
 
             ConfirmCommand = new DelegateCommand(() =>
             {

@@ -1,10 +1,16 @@
 ﻿using Core;
+using FluentValidation;
 using System;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Reflection;
 
-namespace Entity.Model
+namespace Entity.Models
 {
+    /// <summary>
+    /// 账户类
+    /// </summary>
     public class Account : NotifyInfoCDObject
     {
         public Guid ID
@@ -15,6 +21,9 @@ namespace Entity.Model
 
         private Guid _ID;
 
+        [DisplayName("用户名")]
+        [Description("用户名")]
+        [Category("基础信息")]
         public string UserName
         {
             get { return _UserName; }
@@ -23,6 +32,7 @@ namespace Entity.Model
 
         private string _UserName;
 
+        [Description("密码")]
         public string Password
         {
             get { return _Password; }
@@ -47,18 +57,5 @@ namespace Entity.Model
 
         private DateTime _UpdateTime;
 
-        protected override string Validate(string columnName)
-        {
-            if (validator == null)
-            {
-                validator = new AccountValidation();
-            }
-            //var a = new ValidationContext();
-            var firstOrDefault = validator.Validate(this)
-                .Errors.FirstOrDefault(lol => lol.PropertyName == columnName);
-            return firstOrDefault?.ErrorMessage;
-        }
-
-        private AccountValidation validator;
     }
 }
