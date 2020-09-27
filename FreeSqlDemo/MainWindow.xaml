@@ -4,18 +4,18 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:prism="http://prismlibrary.com/"
-        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:core="clr-namespace:Windows.Core;assembly=Windows.Core"
+        xmlns:pt="http://propertytools.org/wpf"
         xmlns:local="clr-namespace:FreeSqlDemo"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
         prism:ViewModelLocator.AutoWireViewModel="True">
+    <!--xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"-->
     <StackPanel HorizontalAlignment="Center">
-        <xctk:PropertyGrid x:Name="_propertyGrid" Width="450" Margin="10" SelectedObject="{Binding Account}"
+        <!--<xctk:PropertyGrid x:Name="_propertyGrid" Width="450" Margin="10" SelectedObject="{Binding Account}"
                            ShowSummary="False" ShowAdvancedOptions="False" ShowTitle="False" ShowSearchBox="False" ShowSortOptions="False" ShowDescriptionByTooltip="True"
-                           
                                      AutoGenerateProperties="True">
-            <!-- Only the following properties will be displayed in the PropertyGrid -->
-
-        </xctk:PropertyGrid>
+        </xctk:PropertyGrid>-->
+        <core:PropertyGrid Margin="8" SelectedObject="{Binding Account}" />
     </StackPanel>
 </Window>

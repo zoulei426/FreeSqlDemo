@@ -1,0 +1,48 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Windows;
+using System.Windows.Controls;
+
+namespace Windows.Core
+{
+    /// <summary>
+    /// Defines functionality to create controls for a <see cref="PropertyGrid" />.
+    /// </summary>
+    public interface IPropertyGridControlFactory
+    {
+        /// <summary>
+        /// Creates the control for a property.
+        /// </summary>
+        /// <param name="propertyItem">The property item.</param>
+        /// <param name="options">The options.</param>
+        /// <returns>
+        /// A element.
+        /// </returns>
+        FrameworkElement CreateControl(PropertyItem propertyItem, PropertyControlFactoryOptions options);
+
+        /// <summary>
+        /// Creates the error control.
+        /// </summary>
+        /// <param name="pi">The pi.</param>
+        /// <param name="instance">The instance.</param>
+        /// <param name="tab">The tab.</param>
+        /// <returns></returns>
+        ContentControl CreateErrorControl(PropertyItem pi, object instance, Tab tab, PropertyControlFactoryOptions options);
+
+        /// <summary>
+        /// Sets validation error style for tooltips
+        /// </summary>
+        /// <param name="control"></param>
+        /// <param name="options"></param>
+        /// <returns></returns>
+        void SetValidationErrorStyle(FrameworkElement control, PropertyControlFactoryOptions options);
+
+        /// <summary>
+        /// Updates the tab for validation results.
+        /// </summary>
+        /// <param name="tab">The tab.</param>
+        /// <param name="errorInfo">The error information.</param>
+        void UpdateTabForValidationResults(Tab tab, object errorInfo);
+    }
+}

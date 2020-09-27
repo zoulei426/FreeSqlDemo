@@ -17,6 +17,206 @@
             <param name="source"></param>
             <returns></returns>
         </member>
+        <member name="T:Core.ReflectionExtension">
+            <summary>
+            Provides reflection extensions.
+            </summary>
+        </member>
+        <member name="M:Core.ReflectionExtension.FilterOnBrowsableAttribute``1(``0)">
+            <summary>
+            Filters on the <see cref="T:System.ComponentModel.BrowsableAttribute" />.
+            </summary>
+            <typeparam name="T">The enumeration type.</typeparam>
+            <param name="arr">The array.</param>
+            <returns>
+            The filtered values.
+            </returns>
+        </member>
+        <member name="M:Core.ReflectionExtension.GetCustomAttributes``1(System.Reflection.FieldInfo,System.Boolean)">
+            <summary>
+            Gets the attributes of the specified type.
+            </summary>
+            <typeparam name="T">The type of attribute to get.</typeparam>
+            <param name="fieldInfo">The field info.</param>
+            <param name="inherit">The inherit flag.</param>
+            <returns>
+            The attributes enumeration.
+            </returns>
+        </member>
+        <member name="M:Core.ReflectionExtension.GetFirstAttributeOrDefault``1(System.ComponentModel.PropertyDescriptor)">
+            <summary>
+            Return the first attribute of a given type for the specified property descriptor.
+            </summary>
+            <typeparam name="T">An attribute type.</typeparam>
+            <param name="descriptor">The property descriptor.</param>
+            <returns>The first attribute of the specified type.</returns>
+        </member>
+        <member name="M:Core.ReflectionExtension.GetAttributeValue``2(System.ComponentModel.PropertyDescriptor,System.Func{``0,``1},``1)">
+            <summary>
+            Gets the value of the first attribute of the specified type.
+            </summary>
+            <typeparam name="T">The type of the attribute.</typeparam>
+            <typeparam name="TResult">The type of the result.</typeparam>
+            <param name="descriptor">The descriptor.</param>
+            <param name="func">The mapping function.</param>
+            <param name="defaultValue">The default value.</param>
+            <returns>The value returned from the mapping function, or the default value if the attribute was not found.</returns>
+        </member>
+        <member name="M:Core.ReflectionExtension.GetFirstAttributeOrDefault(System.ComponentModel.PropertyDescriptor,System.Type)">
+            <summary>
+            Gets the first attribute of the specified type.
+            </summary>
+            <param name="descriptor">The descriptor.</param>
+            <param name="attributeType">Type of the attribute.</param>
+            <returns>The first attribute of the specified type.</returns>
+        </member>
+        <member name="M:Core.ReflectionExtension.IsReadOnly(System.ComponentModel.PropertyDescriptor)">
+            <summary>
+            Determines whether the property is read-only.
+            </summary>
+            <param name="pd">The property descriptor.</param>
+            <returns><c>true</c> if the property is read-only; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Core.ReflectionExtension.GetCategory(System.ComponentModel.PropertyDescriptor)">
+            <summary>
+            Gets the category for the specified property.
+            </summary>
+            <param name="pd">The property descriptor.</param>
+            <returns>The category.</returns>
+        </member>
+        <member name="M:Core.ReflectionExtension.GetDescription(System.ComponentModel.PropertyDescriptor)">
+            <summary>
+            Gets the description for the specified property.
+            </summary>
+            <param name="pd">The property descriptor.</param>
+            <returns>The description.</returns>
+        </member>
+        <member name="M:Core.ReflectionExtension.GetDisplayName(System.ComponentModel.PropertyDescriptor)">
+            <summary>
+            Gets the display name for the specified property.
+            </summary>
+            <param name="pd">The property descriptor.</param>
+            <returns>The display name.</returns>
+        </member>
+        <member name="T:Core.TypeExtension">
+            <summary>
+            Type扩展
+            </summary>
+        </member>
+        <member name="F:Core.TypeExtension.GenericEnumerableType">
+            <summary>
+            The generic sequence type.
+            </summary>
+        </member>
+        <member name="M:Core.TypeExtension.FindBiggestCommonType(System.Collections.IEnumerable)">
+            <summary>
+            Finds the biggest common type of items in the list.
+            </summary>
+            <param name="items">The list.</param>
+            <returns>
+            The biggest common type.
+            </returns>
+        </member>
+        <member name="M:Core.TypeExtension.GetEnumType(System.Type)">
+            <summary>
+            Gets the underlying enum type of the specified type, if the specified type is a nullable type.
+            </summary>
+            <param name="propertyType">The type.</param>
+            <returns>
+            The type of the underlying enum.
+            </returns>
+        </member>
+        <member name="M:Core.TypeExtension.GetItemType(System.Collections.IEnumerable)">
+            <summary>
+            Gets the type of the items in the specified enumeration.
+            </summary>
+            <param name="enumerable">The enumerable.</param>
+            <returns>
+            The type of the items.
+            </returns>
+        </member>
+        <member name="M:Core.TypeExtension.GetListElementType(System.Type)">
+            <summary>
+            Gets the item type from a list type.
+            </summary>
+            <param name="listType">The list type.</param>
+            <returns>
+            The <see cref="T:System.Type" /> of the elements.
+            </returns>
+        </member>
+        <member name="M:Core.TypeExtension.Is(System.Type,System.Type)">
+            <summary>
+            Determines whether the first type is assignable from the specified second type.
+            </summary>
+            <param name="firstType">Type of the first type.</param>
+            <param name="secondType">The type of the second type.</param>
+            <returns>
+            True if it is assignable.
+            </returns>
+        </member>
+        <member name="M:Core.TypeExtension.GetInnerMostGenericType(System.Collections.IList)">
+            <summary>
+            Gets inner generic type of an IList&gt;IList&lt;
+            </summary>
+            <param name="list">The list.</param>
+            <returns>
+            The <see cref="T:System.Type" />.
+            </returns>
+        </member>
+        <member name="M:Core.TypeExtension.GetInnerTypeOfList(System.Collections.IList)">
+            <summary>
+            Gets the type of the inner list of a IList&gt;IList&lt;
+            </summary>
+            <param name="list">The list.</param>
+            <returns>
+            The type of the inner list. Return <c>null</c> if only interface type can be retrieved.
+            </returns>
+        </member>
+        <member name="M:Core.TypeExtension.IsIListIList(System.Type)">
+            <summary>
+            Determines whether the type is IList{IList}.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>
+            <c>true</c> if the type is IList{IList}; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="T:Core.FormattedTimeSpanParser">
+            <summary>
+            TimeSpan parser that use a format string to evaluate the input string.
+            </summary>
+            <remarks>Supports the following format codes: D, DD, H, HH, M, MM, S, SS, d, dd, h, hh, m, mm, s, ss, f, ff, fff</remarks>
+        </member>
+        <member name="F:Core.FormattedTimeSpanParser.specialCharacters">
+            <summary>
+            The special characters.
+            </summary>
+        </member>
+        <member name="F:Core.FormattedTimeSpanParser.conversionExpression">
+            <summary>
+            The conversion expression.
+            </summary>
+        </member>
+        <member name="M:Core.FormattedTimeSpanParser.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Core.FormattedTimeSpanParser" /> class.
+            </summary>
+            <param name="formatString">The format string.</param>
+        </member>
+        <member name="P:Core.FormattedTimeSpanParser.Expression">
+            <summary>
+            Gets or sets the regular expression.
+            </summary>
+        </member>
+        <member name="M:Core.FormattedTimeSpanParser.Parse(System.String)">
+            <summary>
+            Parses the specified time span string.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>
+            A time span.
+            </returns>
+        </member>
         <member name="T:Core.NotifyCDObject">
             <summary>
             INotifyPropertyChanged实现类
@@ -32,9 +232,52 @@
             构造
             </summary>
         </member>
+        <member name="M:Core.NotifyCDObject.NotifyPropertyChanged(System.String)">
+            <summary>
+            当指定的属性被更改时调用
+            </summary>
+            <param name="propertyName"></param>
+        </member>
+        <member name="M:Core.NotifyCDObject.NotifyPropertyChanged``1(System.Linq.Expressions.Expression{System.Func{``0}})">
+            <summary>
+            当指定的属性被更改时调用
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="lambda"></param>
+        </member>
+        <member name="M:Core.NotifyCDObject.RaisePropertyChanged(System.String)">
+            <summary>
+            Raises the property changed event.
+            </summary>
+            <param name="propertyName">Name of the property.</param>
+        </member>
+        <member name="M:Core.NotifyCDObject.SetValue``1(``0@,``0,System.String)">
+            <summary>
+            Sets the property value.
+            </summary>
+            <typeparam name="T">The type of the property.</typeparam>
+            <param name="field">The field.</param>
+            <param name="value">The value.</param>
+            <param name="propertyName">Name of the property.</param>
+            <returns>
+            True if the property was set.
+            </returns>
+            <remarks>This method uses the CallerMemberNameAttribute to determine the property name.</remarks>
+        </member>
+        <member name="M:Core.NotifyCDObject.VerifyProperty(System.String)">
+            <summary>
+            Verifies the property name.
+            </summary>
+            <param name="propertyName">Name of the property.</param>
+        </member>
         <member name="F:Core.NotifyInfoCDObject._DataErrors">
             <summary>
             验证错误集合
+            </summary>
+        </member>
+        <member name="F:Core.NotifyInfoCDObject.validator">
+            <summary>
+            验证器
             </summary>
         </member>
         <member name="M:Core.NotifyInfoCDObject.RemoveDic(System.Collections.Generic.Dictionary{System.String,System.String},System.String)">
@@ -50,6 +293,147 @@
             </summary>
             <param name="dics"></param>
             <param name="dicKey"></param>
+        </member>
+        <member name="T:Core.ReflectionMath">
+            <summary>
+            Addition, subtraction and multiplication for all kinds of objects (by reflection to invoke the operators).
+            </summary>
+        </member>
+        <member name="M:Core.ReflectionMath.TryParse(System.Type,System.String,System.IFormatProvider,System.Object@)">
+            <summary>
+            Tries to parse the specified string.
+            </summary>
+            <param name="type">The target type.</param>
+            <param name="s">The arguments.</param>
+            <param name="provider">The format provider.</param>
+            <param name="result">The result.</param>
+            <returns>
+            <c>true</c> if parsing successful, <c>false</c> otherwise.
+            </returns>
+        </member>
+        <member name="M:Core.ReflectionMath.TryAdd(System.Object,System.Object,System.Object@)">
+            <summary>
+            Performs addition with the op_Addition operator. A return value indicates whether the addition succeeded or failed.
+            </summary>
+            <param name="o1">The first object.</param>
+            <param name="o2">The second object.</param>
+            <param name="result">The sum.</param>
+            <returns>
+            True if the addition succeeded.
+            </returns>
+        </member>
+        <member name="M:Core.ReflectionMath.TryMultiply(System.Object,System.Object,System.Object@)">
+            <summary>
+            Performs multiplication with the op_Multiplication operator. A return value indicates whether the addition succeeded or failed.
+            </summary>
+            <param name="o1">The first object.</param>
+            <param name="o2">The second object.</param>
+            <param name="result">The product.</param>
+            <returns>
+            True if the multiplication succeeded.
+            </returns>
+        </member>
+        <member name="M:Core.ReflectionMath.TrySubtract(System.Object,System.Object,System.Object@)">
+            <summary>
+            Performs subtraction with the op_Subtraction operator. A return value indicates whether the addition succeeded or failed.
+            </summary>
+            <param name="o1">The first object.</param>
+            <param name="o2">The second object.</param>
+            <param name="result">The difference.</param>
+            <returns>
+            True if the subtraction succeeded.
+            </returns>
+        </member>
+        <member name="M:Core.ReflectionMath.TryInvoke(System.String,System.Object,System.Object,System.Object@)">
+            <summary>
+            Tries to invoke invoke the specified method.
+            </summary>
+            <param name="methodName">The method name.</param>
+            <param name="o1">The o 1.</param>
+            <param name="o2">The o 2.</param>
+            <param name="result">The result.</param>
+            <returns>
+            The try invoke.
+            </returns>
+        </member>
+        <member name="T:Core.ReflectionTool">
+            <summary>
+            反射工具
+            </summary>
+        </member>
+        <member name="M:Core.ReflectionTool.CreateInstance``1(System.String,System.String)">
+            <summary>
+            创建对象实例
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="fullName">命名空间.类型名</param>
+            <param name="assemblyName">程序集</param>
+            <returns></returns>
+        </member>
+        <member name="M:Core.ReflectionTool.CreateInstance``1(System.String,System.String,System.String)">
+            <summary>
+            创建对象实例
+            </summary>
+            <typeparam name="T">要创建对象的类型</typeparam>
+            <param name="assemblyName">类型所在程序集名称</param>
+            <param name="nameSpace">类型所在命名空间</param>
+            <param name="className">类型名</param>
+            <returns></returns>
+        </member>
+        <member name="T:Core.TimeSpanFormatter">
+            <summary>
+            Formats the TimeSpan to a string.
+            </summary>
+            <remarks>See http://www.java2s.com/Open-Source/CSharp/Sound-Mp3/stamp/Microsoft/Office/PowerPoint/STAMP/Core/TimeSpanFormatter.cs.htm</remarks>
+        </member>
+        <member name="F:Core.TimeSpanFormatter.formatParser">
+            <summary>
+            The format parser.
+            </summary>
+        </member>
+        <member name="M:Core.TimeSpanFormatter.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Core.TimeSpanFormatter" /> class.
+            </summary>
+        </member>
+        <member name="M:Core.TimeSpanFormatter.Format(System.String,System.Object,System.IFormatProvider)">
+            <summary>
+            Converts the value of a specified timespan to an equivalent string representation using specified format and culture-specific formatting information.
+            </summary>
+            <param name="format">A format string containing formatting specifications.</param>
+            <param name="arg">An object to format.</param>
+            <param name="formatProvider">An object that supplies format information about the current instance.</param>
+            <returns>
+            The string representation of the value of <paramref name="arg" /> , formatted as specified by <paramref name="format" /> and <paramref name="formatProvider" /> .
+            </returns>
+        </member>
+        <member name="M:Core.TimeSpanFormatter.GetFormat(System.Type)">
+            <summary>
+            Returns an object that provides formatting services for the specified type.
+            </summary>
+            <param name="formatType">An object that specifies the type of format object to return.</param>
+            <returns>
+            An instance of the object specified by <paramref name="formatType" /> , if the <see cref="T:System.IFormatProvider" /> implementation can supply that type of object; otherwise, <c>null</c>.
+            </returns>
+        </member>
+        <member name="M:Core.TimeSpanFormatter.EvaluateMatch(System.Text.RegularExpressions.Match,System.TimeSpan)">
+            <summary>
+            Evaluates a match.
+            </summary>
+            <param name="match">The match.</param>
+            <param name="timeSpan">The time span.</param>
+            <returns>
+            The evaluate match.
+            </returns>
+        </member>
+        <member name="M:Core.TimeSpanFormatter.GetMatchEvaluator(System.TimeSpan)">
+            <summary>
+            Gets the match evaluator for the specified time span.
+            </summary>
+            <param name="timeSpan">The time span.</param>
+            <returns>
+            The match evaluator.
+            </returns>
         </member>
     </members>
 </doc>

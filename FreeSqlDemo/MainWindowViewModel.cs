@@ -27,16 +27,22 @@ namespace FreeSqlDemo
 
         public MainWindowViewModel()
         {
-            //var account = new Account();
-            //account.UserName = "Alice";
-            //account.Password = "123456";
-
-            //var resp = new AccountRepository();
-            //resp.AddAccount(account.ConvertTo<Entity.Database.Account>());
-
-
+            var id = new Guid("5f6e55b3-eff9-b16c-0097-2644033ba3f5");
             var resp = new AccountRepository();
-            Account = resp.Get(new Guid("5f6e55b3-eff9-b16c-0097-2644033ba3f5")).ConvertTo<Account>();
+            Account = resp.Get(id)?.ConvertTo<Account>();
+
+            if (Account == null)
+            {
+                var account = new Account();
+                account.ID = id;
+                account.UserName = "Alice";
+                account.Password = "123456";
+
+                //var resp = new AccountRepository();
+                resp.AddAccount(account.ConvertTo<Entity.Database.Account>());
+
+                Account = resp.Get(id)?.ConvertTo<Account>();
+            }
 
             ConfirmCommand = new DelegateCommand(() =>
             {
