@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using System.Text;
 
@@ -229,6 +230,32 @@ namespace Core
         #endregion Methods - Copy
 
         #region Methods - Traversal
+
+        public static void TraversalPropertiesInfo(this object source, Func<PropertyInfo, object, bool> method)
+        {
+            if (method == null || source == null)
+                return;
+
+            PropertyInfo[] listPropertyInfo = source.GetType().
+                GetProperties().OrderBy(c => c.MetadataToken).ToArray();
+
+            foreach (PropertyInfo pi in listPropertyInfo)
+            {
+                if (!pi.CanRead)
+                    continue;
+
+                try
+                {
+                    object val = pi.GetValue(source, null);
+                    if (!method(pi, val))
+                        return;
+                }
+                catch
+                {
+                    continue;
+                }
+            }
+        }
 
         public static void TraversalFieldsInfo(this object source, Func<FieldInfo, object, bool> method)
         {

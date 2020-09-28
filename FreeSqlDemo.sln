@@ -21,7 +21,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Resources", "Resources\Reso
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Windows", "Windows", "{EC2EC44A-A470-4EE7-86F0-AD529A592B1E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Windows.Core", "Windows.Core\Windows.Core.csproj", "{D39E806C-2E46-4D26-A343-D6BCC0FF462E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Windows.Core", "Windows.Core\Windows.Core.csproj", "{D39E806C-2E46-4D26-A343-D6BCC0FF462E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Windows.Control", "Windows.Control\Windows.Control.csproj", "{2F795069-DA10-44DA-8BF0-24348D5D6738}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +55,10 @@ Global
 		{D39E806C-2E46-4D26-A343-D6BCC0FF462E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D39E806C-2E46-4D26-A343-D6BCC0FF462E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D39E806C-2E46-4D26-A343-D6BCC0FF462E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F795069-DA10-44DA-8BF0-24348D5D6738}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F795069-DA10-44DA-8BF0-24348D5D6738}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F795069-DA10-44DA-8BF0-24348D5D6738}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F795069-DA10-44DA-8BF0-24348D5D6738}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,6 +73,7 @@ Global
 		{14BCAB08-3B70-4350-9F85-0EF2679004CE} = {CB0C69FD-8262-4AC2-8D77-C776188E8013}
 		{EC2EC44A-A470-4EE7-86F0-AD529A592B1E} = {CB9028E1-7BFF-41E3-A68F-28DA75197DC5}
 		{D39E806C-2E46-4D26-A343-D6BCC0FF462E} = {EC2EC44A-A470-4EE7-86F0-AD529A592B1E}
+		{2F795069-DA10-44DA-8BF0-24348D5D6738} = {EC2EC44A-A470-4EE7-86F0-AD529A592B1E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {65FBD7A2-5651-4A8C-A0D0-1DC88A1095BD}

@@ -7,6 +7,7 @@
         xmlns:core="clr-namespace:Windows.Core;assembly=Windows.Core"
         xmlns:pt="http://propertytools.org/wpf"
         xmlns:local="clr-namespace:FreeSqlDemo"
+        xmlns:control="clr-namespace:Windows.Control;assembly=Windows.Control"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
         prism:ViewModelLocator.AutoWireViewModel="True">
@@ -16,6 +17,6 @@
                            ShowSummary="False" ShowAdvancedOptions="False" ShowTitle="False" ShowSearchBox="False" ShowSortOptions="False" ShowDescriptionByTooltip="True"
                                      AutoGenerateProperties="True">
         </xctk:PropertyGrid>-->
-        <core:PropertyGrid Margin="8" SelectedObject="{Binding Account}" />
+        <control:PropertyGrid Margin="8" Object="{Binding Account}" />
     </StackPanel>
 </Window>
